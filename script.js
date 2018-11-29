@@ -1,16 +1,22 @@
 $(document).ready(function(){
     //Canvas stuff
-    if (!("ontouchstart" in document.documentElement)) {
+    var canvas = $("#canvas")[0];
+    var cw = 10;
+    
+    if ("ontouchstart" in document.documentElement) {
+        canvas.width = 675;
+        canvas.height = 675;
+        cw = 15;
+        alert("mobile");
+    } else {
         $(".arrows_container").hide()
     }
-
-	var canvas = $("#canvas")[0];
+    
 	var ctx = canvas.getContext("2d");
 	var w = $("#canvas").width();
 	var h = $("#canvas").height();
 	
 	//Lets save the cell width in a variable for easy control
-	var cw = 10;
 	var d;
 	var food;
 	var score;
@@ -61,9 +67,9 @@ $(document).ready(function(){
 		//To avoid the snake trail we need to paint the BG on every frame
 		//Lets paint the canvas now
 		ctx.fillStyle = "white";
-		ctx.fillRect(0, 0, w, h);
+        ctx.fillRect(0, 0, w, h);
 		ctx.strokeStyle = "black";
-		ctx.strokeRect(0, 0, w, h);
+        ctx.strokeRect(0, 0, w, h);
 		
 		//The movement code for the snake to come here.
 		//The logic is simple

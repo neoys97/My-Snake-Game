@@ -1,3 +1,7 @@
+html body {
+    height: 100%;
+    overflow: hidden;
+}
 .canvas_container, .arrows_container {
     width: 100%;
     text-align:center;
@@ -5,7 +9,7 @@
 
 .arrows {
     display: inline-block;
-    width: 50px;
+    width: 200px;
 }
 
 .arrows img {
@@ -13,3 +17,6 @@
     max-height: 100%;
 }
 
+.ui-loader {
+    display: none;
+}
