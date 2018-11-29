@@ -7,7 +7,6 @@ $(document).ready(function(){
         canvas.width = 675;
         canvas.height = 675;
         cw = 15;
-        alert("mobile");
     } else {
         $(".arrows_container").hide()
     }
