@@ -1,5 +1,9 @@
 $(document).ready(function(){
-	//Canvas stuff
+    //Canvas stuff
+    if (!("ontouchstart" in document.documentElement)) {
+        $(".arrows_container").hide()
+    }
+    
 	var canvas = $("#canvas")[0];
 	var ctx = canvas.getContext("2d");
 	var w = $("#canvas").width();
