@@ -3,7 +3,7 @@ $(document).ready(function(){
     if (!("ontouchstart" in document.documentElement)) {
         $(".arrows_container").hide()
     }
-    
+
 	var canvas = $("#canvas")[0];
 	var ctx = canvas.getContext("2d");
 	var w = $("#canvas").width();
@@ -154,6 +154,21 @@ $(document).ready(function(){
 		else if(key == "39" && d != "left") d = "right";
 		else if(key == "40" && d != "up") d = "down";
 		//The snake is now keyboard controllable
-    })
+    });
     
+    $("#up").on("tap", function(){
+        if (d != "down") d = "up";
+    });
+
+    $("#down").on("tap", function(){
+        if (d != "up") d = "down";
+    });
+
+    $("#left").on("tap", function(){
+        if (d != "right") d = "left";
+    });
+
+    $("#right").on("tap", function(){
+        if (d != "left") d = "right";
+    });
 })
